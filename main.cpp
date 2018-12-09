@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 const int maxV = 1000;
-int i, j, n, t, k,v;
+int i, j, n, t, k,v,a,b;
 int GR[maxV][maxV]; //алгоритм Флойда-Уоршелла 
 void FU(int D[][maxV], int V) {
     int k;
@@ -12,20 +12,17 @@ void FU(int D[][maxV], int V) {
                     if (D[i][k] + D[k][j] < D[i][j] || D[i][j] == 0) D[i][j] = D[i][k] + D[k][j];
 }
 //главная функция 
-void main() {
+int main() {
     cin >> n >> v;
     for (i = 0; i < n; i++) for (j = 0; j < n; j++) {
             cin >> GR[i][j];
         }
-    int mas[100000][2];
-    for (i = 0; i < v; i++)
-    {
-        cin >> mas[i][0] >> mas[i][1];
-    }
     FU(GR, n);
     for (i = 0; i < v; i++)
     {
-        cout << GR[mas[i][0]][mas[i][1]];
+        cin >> mas[i][0] >> mas[i][1];cin>> a >> b
+        cout << gr[a][b]
     }
+    FU(GR, n);
     return 0;
 }
